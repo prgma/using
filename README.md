@@ -20,7 +20,7 @@ const FileGuard = {
   enter() {
     // get handle
     const handle = fs.open('somefile');
-    return handle';
+    return handle;
   },
   exit(handle) {
     // close handle
