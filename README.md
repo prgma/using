@@ -93,4 +93,11 @@ using(getMessage(1), message => {
 });
 ```
 
-`exit` may also be async as its return value is never used.
+`exit` may also be `async` - if so, you can `await` the entire `using` call, which will resolve when the cleanup has finished.
+
+```js
+(async () => {
+  await using(withAsyncCleanup, () => {/* ... */});
+  console.log('cleanup finished!');
+})();
+```
