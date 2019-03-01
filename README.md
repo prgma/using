@@ -101,3 +101,20 @@ using(getMessage(1), message => {
   console.log('cleanup finished!');
 })();
 ```
+
+## Included Guards
+
+### Filesystem (using/fs)
+
+The included `open` guard works just like Python's `open` - provide a file path and access flags (`'r'` by default) to get a
+file descriptor ready to use and automatically cleaned up upon completion:
+
+```js
+import { using } from '@prgma/using';
+import { open } from '@prgma/using/fs';
+import * as fs from 'fs';
+
+using(open('foo.txt', 'rw'), fd => {
+  fs.write(fd, 'Hello, world!');
+});
+```

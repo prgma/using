@@ -2,17 +2,20 @@
   "name": "@prgma/using",
   "private": false,
   "version": "1.0.3",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/prgma/using.git"
   },
   "scripts": {
-    "prepublishOnly": "tsc"
+    "build": "tsc",
+    "package": "yarn build && cp package.json dist && cp README.md dist",
+    "dist": "yarn package && npm publish"
   },
   "devDependencies": {
+    "@types/node": "^11.9.6",
     "@typescript-eslint/eslint-plugin": "^1.4.2",
     "@typescript-eslint/parser": "^1.4.2",
     "eslint": "^5.14.1",
