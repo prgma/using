@@ -12,7 +12,7 @@
   "scripts": {
     "build": "tsc",
     "package": "yarn build && cp package.json dist && cp README.md dist",
-    "dist": "yarn package && cd dist && npm publish"
+    "dist": "yarn package && cd dist && yarn publish"
   },
   "devDependencies": {
     "@types/node": "^11.9.6",
